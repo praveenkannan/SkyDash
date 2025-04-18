@@ -46,6 +46,10 @@ src/
     └── airplane.png
 ```
 
+## Roadmap
+
+See [FUTURE.md](FUTURE.md) for planned features and ideas.
+
 ## Notes
 
 - The app uses the free OpenSky API, which is rate-limited. If you see a rate limit warning, wait a few minutes before retrying.
