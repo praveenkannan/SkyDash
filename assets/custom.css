@@ -1,0 +1,6 @@
+body {
+    background: #f8fafc;
+}
+.Select-control, .rc-slider, .dash-dropdown, .dash-radioitems, .dash-slider {
+    border-radius: 8px !important;
+}

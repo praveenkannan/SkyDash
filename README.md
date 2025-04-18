@@ -1,4 +1,4 @@
-# RealTimeFlightTracker
+# SkyDash
 
 A real-time, interactive flight tracker built with Dash, Dash Leaflet, and the OpenSky Network API.
 

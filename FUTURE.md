@@ -15,6 +15,7 @@ This document tracks planned features, improvements, and ideas for the Real-Time
 
 ## Stretch Goals
 
+- Add Better Frontend with Vue/React. Serverside with FastAPI
 - Deploy to a public cloud (Heroku, Render, etc.)
 - Support multiple languages (internationalization)
 - Add notifications for flight events

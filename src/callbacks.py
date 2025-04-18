@@ -1,5 +1,6 @@
 # callbacks.py
 
+import dash
 from dash import Output, Input, State, html, ALL
 from dash_app import app
 from opensky_data import fetch_flight_data
@@ -83,4 +84,24 @@ def update_map(n, origin_country, altitude_range, speed_range, in_air, max_fligh
     prevent_initial_call=True
 )
 def display_flight_details(n_clicks, children):
-    return "Click an airplane icon for details."
+    ctx = dash.callback_context
+    if not ctx.triggered:
+        return "Click an airplane icon for details."
+    # Find which marker was clicked
+    for i, clicks in enumerate(n_clicks):
+        if clicks:
+            marker_id = ctx.inputs_list[0][i]['id']['index']
+            # Fetch flight details by callsign (marker_id)
+            # You need to fetch the latest flight data here
+            df = fetch_flight_data(bbox)
+            flight = df[df['callsign'] == marker_id]
+            if not flight.empty:
+                row = flight.iloc[0]
+                return html.Div([
+                    html.H4(f"Flight: {row['callsign']}"),
+                    html.P(f"Country: {row['origin_country']}"),
+                    html.P(f"Altitude: {row['baro_altitude']} ft"),
+                    html.P(f"Speed: {row['velocity']} knots"),
+                    html.P(f"On Ground: {'Yes' if row['on_ground'] else 'No'}"),
+                ])
+    return "Click an airplane icon for details." 
