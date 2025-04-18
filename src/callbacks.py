@@ -13,9 +13,8 @@ bbox = COUNTRY_BBOX[country]
     Output('origin-country', 'options'),
     Output('origin-country', 'value'),
     Input('interval', 'n_intervals'),
-    Input('force-update-btn', 'n_clicks')
 )
-def update_country_options(n, force_update):
+def update_country_options(n):
     df = fetch_flight_data(bbox)
     countries = sorted(df['origin_country'].dropna().unique())
     options = [{'label': c, 'value': c} for c in countries]

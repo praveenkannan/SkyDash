@@ -34,5 +34,4 @@ def serve_layout():
         html.Div([
             # Map with bounds for initial viewport
         ], style={'width': '70%', 'float': 'right', 'padding': 20}),
-        html.Button("Force Update", id="force-update-btn"),
     ])

@@ -2,6 +2,8 @@
 
 A real-time, interactive flight tracker built with Dash, Dash Leaflet, and the OpenSky Network API.
 
+![App Screenshot](assets/screenshot.png)
+
 ## Features
 
 - Live-updating map of flights (emoji airplane markers)
