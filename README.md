@@ -13,23 +13,24 @@ A real-time, interactive flight tracker built with Dash, Dash Leaflet, and the O
 
 ## Setup
 
-1. Install dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
-    or with Poetry:
-    ```sh
-    poetry install
-    ```
 
-2. Place your airplane icon in `assets/airplane.png` (or use the default emoji marker).
+1. Install dependencies with [uv](https://github.com/astral-sh/uv):
+    ```sh
+    uv pip install -r pyproject.toml
+    ```
+    or, if you want to create a virtual environment and install:
+    ```sh
+    uv venv .venv
+    source .venv/bin/activate
+    uv pip install -r pyproject.toml
+    ```    
 
-3. Run the app:
+2. Run the app:
     ```sh
     python src/app.py
     ```
 
-4. Open your browser to [http://127.0.0.1:8050](http://127.0.0.1:8050)
+3. Open your browser to [http://127.0.0.1:8050](http://127.0.0.1:8050)
 
 ## Configuration
 
@@ -37,16 +38,23 @@ A real-time, interactive flight tracker built with Dash, Dash Leaflet, and the O
 
 ## Project Structure
 ```
-src/
-├── callbacks.py
-├── config.py
-├── layout.py
-├── map_plot.py
-├── opensky_data.py
-├── app.py
-└── assets
-    └── airplane.png
+SkyDash/
+├── assets/
+│   └── airplane.png
+├── src/
+│   ├── app.py
+│   ├── callbacks.py
+│   ├── config.py
+│   ├── layout.py
+│   ├── map_plot.py
+│   ├── opensky_data.py
+│   └── dash_app.py
+├── README.md
+├── FUTURE.md
+├── pyproject.toml
+└── ...
 ```
+
 
 ## Roadmap
 
