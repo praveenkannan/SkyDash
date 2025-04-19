@@ -1,3 +1,9 @@
+html, body, #_dash-app-content {
+    height: 100% !important;
+    min-height: 100% !important;
+    margin: 0;
+    padding: 0;
+}
 body {
     background: #f8fafc;
 }
